@@ -13,15 +13,17 @@ kubectl get all,secret,pvc,pv,configmap
 # list the releases
 helm list
 # modify the number of replicas
-helm upgrade keycloak set replicas=3
+helm upgrade keycloak codecentric/keycloak --set replicas=3
 # show the history 
 helm history keycloak
 # rollback to the previous version
-helm rollback
+helm rollback keycloak 1
+# show the history 
+helm history keycloak
 # uninstall the chart
 helm uninstall keycloak
 # verify the uninstallation
-kubectl get all,secret,pvc,pv,configmap
+kubectl get all,secret,configmap
 # show the chart
 helm show chart codecentric/keycloak
 # show the chart values
@@ -36,7 +38,7 @@ helm show values codecentric/keycloak
 # create a file with the values
 helm show values codecentric/keycloak > values.yaml
 # modify the values
-helm install keycloak -f .\testvalues.yaml  codecentric/keycloak
+helm install keycloak -f .\values.dev.yaml  codecentric/keycloak
 # verify the installation
 kubectl get all,secret,pvc,pv,configmap
 # uninstall the chart
