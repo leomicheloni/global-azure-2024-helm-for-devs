@@ -1,5 +1,8 @@
 # Helm for devs
 
+Examples used during this talk https://global-azure-2024-spain.sessionize.com/session/618540
+
+
 ## Example 1 - Walkthrough
 
 ``` powershell
